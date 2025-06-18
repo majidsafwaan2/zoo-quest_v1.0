@@ -24,8 +24,8 @@ export default function Contact() {
 
       {/* Pitch */}
       <p className="text-lg mb-10 text-center">
-        We're currently looking for mission-aligned NGOs and conservation groups to pilot this tool.
-        Whether you work with endangered species, habitats, or environmental education — this platform
+        We&rsquo;re currently looking for mission-aligned NGOs and conservation groups to pilot this tool.
+        Whether you work with endangered species, habitats, or environmental education &mdash; this platform
         is designed to emotionally engage your audience and drive real impact.
       </p>
 
