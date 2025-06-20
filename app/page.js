@@ -10,10 +10,10 @@ export default function Home() {
           backgroundImage: "url('/images/hero.jpg')",
         }}
       >
-        <h1 className="text-4xl md:text-6xl font-bold mb-4 text-gray-700 drop-shadow-[2px_2px_4px_rgba(0,0,0,0.7)]">
+        <h1 className="text-4xl md:text-6xl font-bold mb-4 text-white drop-shadow-[2px_2px_4px_black]">
           Talk to Endangered Animals. Inspire Action.
         </h1>
-        <p className="text-xl md:text-2xl max-w-2xl mb-6 font-semibold text-gray-700 drop-shadow-[1.5px_1.5px_3px_rgba(0,0,0,0.6)]">
+        <p className="text-xl md:text-2xl max-w-2xl mb-6 font-semibold text-white drop-shadow-[1.5px_1.5px_3px_black]">
           An AI-powered experience to build empathy and boost conservation support.
         </p>
         <a
