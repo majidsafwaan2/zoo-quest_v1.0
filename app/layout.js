@@ -12,8 +12,8 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className="bg-white text-gray-800 font-sans">
         <header className="bg-green-700 text-white py-4 shadow-md">
-          <nav className="max-w-6xl mx-auto px-3 sm:px-4 flex justify-between items-center">
-            <Link href="/" className="mr-3 sm:mr-4">
+          <nav className="max-w-6xl mx-auto px-4 flex justify-between items-center">
+            <Link href="/" className="mr-4">
               <img
                 src="/images/logo.png"
                 alt="ZooQuest Logo"
@@ -21,7 +21,7 @@ export default function RootLayout({ children }) {
               />
             </Link>
 
-            <div className="space-x-3 sm:space-x-4 text-sm sm:text-base font-semibold">
+            <div className="space-x-[0.75rem] text-[17px] font-semibold">
               <Link href="/about" className="hover:underline">About</Link>
               <Link href="/science" className="hover:underline">Research</Link>
               <Link href="/chat" className="hover:underline">Demo</Link>
