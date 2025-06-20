@@ -21,7 +21,7 @@ export default function RootLayout({ children }) {
               />
             </Link>
 
-            <div className="space-x-[0.75rem] text-[17px] font-semibold">
+            <div className="space-x-[0.4rem] text-base font-semibold">
               <Link href="/about" className="hover:underline">About</Link>
               <Link href="/science" className="hover:underline">Research</Link>
               <Link href="/chat" className="hover:underline">Demo</Link>
