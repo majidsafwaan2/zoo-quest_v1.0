@@ -15,7 +15,7 @@ export default function About() {
         <div className="mb-12">
           <h2 className="text-2xl font-semibold mb-3">Where the Idea Came From</h2>
           <p className="text-md leading-relaxed text-gray-300">
-            This concept emerged from a simple question: <em>What if people could hear
+            After finding numerous research articles that showed that interactions with animals at in person zoos led to more conservation efforts. My team and I had a simple question: <em>What if people could hear
             directly from the animals themselves?</em> With advances in AI language models, we saw
             an opportunity to build a tool that speaks with the voice of the voiceless,
             making animal conservation more personal and emotional.
@@ -56,12 +56,11 @@ export default function About() {
               className="w-32 h-32 object-cover rounded-md"
             />
             <div>
-              <h3 className="text-lg font-semibold mb-2">Safwaan Majid</h3>
+              <h3 className="text-lg font-semibold mb-2">Safwaan Majid - CEO & Founder</h3>
               <p>
-                Safwaan is the creator of ZooQuest, built during a student hackathon to explore the power
-                of empathy in conservation. As a high school student passionate about AI and sustainability,
-                he hopes to help others connect emotionally with wildlife. In his free time, he mentors students
-                in coding and leads youth service initiatives in his community.
+              Hi, I am the creator of ZooQuest. I started this project during a student hackathon at my school as a way to explore how AI, specifically Natural Language Processing, could be used to support animal conservation efforts. Outside of this project, I mentor younger students in robotics and help organize community service programs for youth in my area.
+
+
               </p>
             </div>
           </div>
