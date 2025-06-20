@@ -1,5 +1,6 @@
 'use client';
 import { useState, useEffect } from 'react';
+import { FaHeart, FaRegHeart } from 'react-icons/fa';
 
 const animalProfiles = {
   tiger: {
@@ -81,6 +82,7 @@ export default function ChatPage() {
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState('');
   const [loading, setLoading] = useState(false);
+  const [liked, setLiked] = useState(false);
 
   useEffect(() => {
     const profile = animalProfiles[selectedAnimal];
@@ -88,6 +90,7 @@ export default function ChatPage() {
       { role: 'system', content: profile.system },
       { role: 'assistant', content: profile.intro },
     ]);
+    setLiked(false);
   }, [selectedAnimal]);
 
   const sendMessage = async (e) => {
@@ -125,20 +128,18 @@ export default function ChatPage() {
   const themeColor = animalProfiles[selectedAnimal].color;
 
   return (
-    <div className="bg-black py-10">
+    <div className="bg-black py-10 font-sans">
       <main className="px-6 py-6 max-w-3xl mx-auto text-gray-800 bg-white rounded-xl">
         <h1 className="text-4xl font-bold mb-6 text-center">Talk to the Animals</h1>
 
-        {/* Dropdown Selector */}
-        <div className="mb-6 text-center">
-          <label className="block mb-2 font-semibold text-lg" htmlFor="animalSelect">
-            Choose an animal to talk to:
-          </label>
+        {/* Dropdown Selector and Heart */}
+        <div className="mb-6 flex justify-center items-center gap-3">
+          <label htmlFor="animalSelect" className="sr-only">Choose an animal</label>
           <select
             id="animalSelect"
             value={selectedAnimal}
             onChange={(e) => setSelectedAnimal(e.target.value)}
-            className="border rounded-lg px-4 py-2 text-lg"
+            className="border rounded-lg px-4 py-2 text-lg font-semibold"
           >
             {Object.entries(animalProfiles).map(([key, { label }]) => (
               <option key={key} value={key}>
@@ -146,10 +147,21 @@ export default function ChatPage() {
               </option>
             ))}
           </select>
+          <button
+            onClick={() => setLiked(!liked)}
+            className="text-2xl transition-transform hover:scale-110"
+            aria-label="Toggle heart"
+          >
+            {liked ? (
+              <FaHeart className="text-red-500" />
+            ) : (
+              <FaRegHeart className="text-gray-400" />
+            )}
+          </button>
         </div>
 
         {/* Chat Window */}
-        <div className="border rounded-xl p-4 h-[400px] overflow-y-scroll bg-gray-50 mb-4">
+        <div className="border-2 border-gray-300 rounded-2xl p-4 h-[400px] overflow-y-scroll bg-gray-50 mb-4">
           {messages
             .filter((msg) => msg.role !== 'system')
             .map((msg, i) => (
@@ -160,7 +172,7 @@ export default function ChatPage() {
                 }`}
               >
                 <p
-                  className={`inline-block px-4 py-2 rounded-xl max-w-[80%] ${
+                  className={`inline-block px-4 py-2 rounded-xl max-w-[80%] font-semibold ${
                     msg.role === 'user'
                       ? 'bg-green-600 text-white'
                       : `${themeColor} text-white`
@@ -175,7 +187,7 @@ export default function ChatPage() {
         {/* Input Form */}
         <form onSubmit={sendMessage} className="flex gap-2">
           <input
-            className="flex-1 border px-4 py-2 rounded-lg"
+            className="flex-1 border px-4 py-2 rounded-lg font-semibold"
             placeholder={`Ask the ${selectedAnimal} something...`}
             value={input}
             onChange={(e) => setInput(e.target.value)}
@@ -183,7 +195,7 @@ export default function ChatPage() {
           <button
             type="submit"
             disabled={loading}
-            className="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition"
+            className="bg-green-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-green-700 transition"
           >
             {loading ? '...' : 'Send'}
           </button>
