@@ -12,16 +12,16 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className="bg-white text-gray-800 font-sans">
         <header className="bg-green-700 text-white py-4 shadow-md">
-          <nav className="max-w-6xl mx-auto px-3 sm:px-4 flex justify-between items-center gap-3">
+          <nav className="max-w-6xl mx-auto px-3 sm:px-4 flex justify-between items-center">
             <Link href="/" className="mr-2 sm:mr-4">
               <img
                 src="/images/logo.png"
                 alt="ZooQuest Logo"
-                className="h-8 sm:h-8 md:h-9 lg:h-10 w-auto"
+                className="h-6 sm:h-7 md:h-8 lg:h-9 w-auto"
               />
             </Link>
 
-            <div className="flex flex-wrap gap-2 sm:gap-4 text-sm sm:text-base font-semibold">
+            <div className="space-x-2 sm:space-x-4 text-sm sm:text-base font-semibold">
               <Link href="/about" className="hover:underline">About</Link>
               <Link href="/science" className="hover:underline">Research</Link>
               <Link href="/chat" className="hover:underline">Demo</Link>
