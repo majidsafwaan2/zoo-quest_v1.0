@@ -19,19 +19,19 @@ export default function NGOToolkit() {
   };
 
   return (
-    <main className="px-6 py-16 max-w-4xl mx-auto text-gray-800">
+    <main className="px-6 py-16 max-w-4xl mx-auto text-gray-200">
       <h1 className="text-4xl font-bold mb-6 text-center">NGO Toolkit</h1>
 
       <p className="text-lg text-center mb-10">
-        This chatbot is designed for animal nonprofits, zoos, and conservation groups who want to emotionally engage their audience.
+        Our chatbot is designed for animal nonprofits, zoos, and conservation groups who want to emotionally engage their audience.
         Below are step-by-step instructions to embed it on your own website.
       </p>
 
       {/* Step-by-Step Instructions */}
       <section className="mb-16">
-        <h2 className="text-2xl font-semibold mb-4">How to Add It to Your Website</h2>
+        <h2 className="text-2xl font-semibold mb-4">How to Add Us to Your Website</h2>
 
-        <ol className="list-decimal space-y-4 pl-5 text-md text-gray-700">
+        <ol className="list-decimal space-y-4 pl-5 text-md text-gray-400">
           <li>
             <strong>Choose where you want it:</strong> You can embed the chatbot into an existing web page
             (like your donation or education page), or create a new one (e.g., <code>/chatbot</code>).
@@ -60,14 +60,14 @@ export default function NGOToolkit() {
 </iframe>`);
                   alert('Copied to clipboard!');
                 }}
-                className="absolute top-2 right-2 bg-green-600 text-white text-xs px-3 py-1 rounded hover:bg-green-700 transition"
+                className="absolute top-2 right-2 bg-green-600 text-white text-xs px-3 py-1 rounded hover:bg-gray-600 transition"
               >
                 Copy
               </button>
             </div>
           </li>
           <li>
-            <strong>Publish your changes:</strong> Save and update your website. The chatbot should now appear and work instantly.
+            <strong>Publish your changes:</strong> Save and update your website. The chatbot should now appear and work right away.
           </li>
         </ol>
 
@@ -80,10 +80,10 @@ export default function NGOToolkit() {
       <section className="mb-16">
         <h2 className="text-2xl font-semibold mb-4">Self-Host or Customize</h2>
         <a
-          href="https://github.com/your-github-repo"
+          href="https://github.com/majidsafwaan2/zoo-quest_v1.0"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-block bg-black text-white px-6 py-2 rounded-lg font-semibold hover:bg-gray-800 transition"
+          className="inline-block bg-purple-600 text-white px-6 py-2 rounded-lg font-semibold hover:bg-gray-800 transition"
         >
           View on GitHub
         </a>
@@ -132,8 +132,8 @@ export default function NGOToolkit() {
             Send Message
           </button>
         </form>
-        <p className="text-sm text-center mt-6 text-gray-500">
-          Or email us at <a href="mailto:your@email.com" className="underline">your@email.com</a>
+        <p className="text-sm text-center mt-6 text-gray-200">
+          Or email us at <a href="mailto:info.zooquest@gmail.com" className="underline">info.zooquest@gmail.com</a>
         </p>
       </section>
     </main>

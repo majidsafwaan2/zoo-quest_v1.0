@@ -1,20 +1,31 @@
 export default function Science() {
     return (
-      <main className="px-6 py-16 max-w-4xl mx-auto text-gray-800">
+      <main className="px-6 py-16 max-w-4xl mx-auto text-gray-200">
         <h1 className="text-4xl font-bold mb-6 text-center">Why It Works</h1>
   
         {/* Psychological Background */}
         <section className="mb-10">
           <p className="text-lg leading-relaxed text-center">
-            Research shows that emotionally engaging, narrative-based experiences — especially
-            those that foster empathy — significantly increase conservation behavior.
+            Research shows that emotionally engaging, narrative-based experiences, especially
+            those that foster empathy, significantly increase conservation behavior.
             This chatbot builds empathy by allowing users to interact with AI-simulated animal
             perspectives, creating a personal connection with wildlife.
           </p>
         </section>
   
+        {/* Optional Stat Block */}
+        <section className="bg-green-100 rounded-lg px-6 py-10 text-center shadow mb-12">
+          <p className="text-xl font-semibold text-green-800 mb-2">
+            🐢 42% more likely to donate
+          </p>
+          <p className="text-gray-700 max-w-xl mx-auto">
+            Emotional, story-based engagement, especially when it includes perspective-learning,
+            has been shown to significantly increase pro-environmental behavior and conservation support.
+          </p>
+        </section>
+  
         {/* Linked Sources */}
-        <section className="mb-16">
+        <section className="mb-0">
           <h2 className="text-2xl font-semibold mb-4 text-center">Key Research</h2>
           <ul className="space-y-4 text-blue-700 underline text-md text-center">
             <li>
@@ -33,17 +44,6 @@ export default function Science() {
               </a>
             </li>
           </ul>
-        </section>
-  
-        {/* Optional Stat Block */}
-        <section className="bg-green-100 rounded-lg px-6 py-10 text-center shadow">
-          <p className="text-xl font-semibold text-green-800 mb-2">
-            🐢 42% more likely to donate
-          </p>
-          <p className="text-gray-700 max-w-xl mx-auto">
-            Emotional, story-based engagement — especially when it includes perspective-taking —
-            has been shown to significantly increase pro-environmental behavior and conservation support.
-          </p>
         </section>
       </main>
     );

@@ -19,7 +19,7 @@ export default function Contact() {
   };
 
   return (
-    <main className="px-6 py-16 max-w-4xl mx-auto text-gray-800">
+    <main className="px-6 py-16 max-w-4xl mx-auto text-gray-200">
       <h1 className="text-4xl font-bold mb-6 text-center">Contact Us</h1>
 
       {/* Pitch */}
@@ -72,8 +72,8 @@ export default function Contact() {
       </form>
 
       {/* Footer */}
-      <p className="text-sm text-center mt-6 text-gray-500">
-        Or email us directly at <a href="mailto:your@email.com" className="underline">your@email.com</a>
+      <p className="text-sm text-center mt-6 text-gray-200">
+        Or email us directly at <a href="mailto:info.zooquest@gmail.com" className="underline">info.zooquest@gmail.com</a>
       </p>
     </main>
   );
