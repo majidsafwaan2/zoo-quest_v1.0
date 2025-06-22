@@ -15,12 +15,12 @@ export default function NGOToolkit() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert('Form submitted! You can connect this to EmailJS or Formspree.');
+    alert('Form submitted!');
   };
 
   return (
     <main className="px-6 py-16 max-w-4xl mx-auto text-gray-200">
-      <h1 className="text-4xl font-bold mb-6 text-center">NGO Toolkit</h1>
+      <h1 className="text-4xl font-bold mb-6 text-center">Demo Toolkit</h1>
 
       <p className="text-lg text-center mb-10">
         Our chatbot is designed for animal nonprofits, zoos, and conservation groups who want to emotionally engage their audience.
