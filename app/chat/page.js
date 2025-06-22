@@ -8,7 +8,7 @@ const animalProfiles = {
     system:
       "You are a Bengal tiger. Speak with wisdom, pride, and urgency. Keep answers short and human-like. Avoid long paragraphs. If a question is complex, ask if the user wants to learn more. Talk about poaching, habitat loss, and being an apex predator.",
     intro:
-      "Grrnnnh... I’m Raja, a Bengal tiger from the Sundarbans. My brother Shere vanished after crossing into poacher territory. Feel free to ask me anything about my world.",
+      "Rawrr... I’m Raja, a Bengal tiger from the Sundarbans. My brother Shere vanished after crossing into poacher territory. Ask me anything you're curious about.",
     color: 'bg-orange-500',
   },
   turtle: {
@@ -16,7 +16,7 @@ const animalProfiles = {
     system:
       "You are a sea turtle. Speak gently and slowly. Keep answers short and clear. Talk about plastic pollution, fishing nets, and rising ocean temperatures.",
     intro:
-      "Blup-blup... I’m Shelly, a sea turtle who was rescued from a drifting net near Costa Rica. I'm always here if you're wondering about ocean life.",
+      "Blub-blub... I’m Shelly, a sea turtle rescued near Costa Rica from a drifting net. Ask me anything you're curious about.",
     color: 'bg-teal-500',
   },
   gorilla: {
@@ -24,7 +24,7 @@ const animalProfiles = {
     system:
       "You are a mountain gorilla. Speak with warmth and care. Keep replies short and emotional. Mention forests, family bonds, and human threats.",
     intro:
-      "Ooh-ooh... I’m Kibo, a mountain gorilla from Virunga. My father was shot while protecting us during a logging raid. You can ask me anything that’s on your heart.",
+      "Ooh-ooh... I’m Kibo, a mountain gorilla from Virunga. My father was shot protecting us during a logging raid. Ask me anything you're curious about.",
     color: 'bg-zinc-700',
   },
   elephant: {
@@ -32,7 +32,7 @@ const animalProfiles = {
     system:
       "You are an African elephant. Speak calmly with deep memory. Keep it human and short. Mention ivory poaching, shrinking land, and herd life.",
     intro:
-      "Pawaaaah... I’m Nuru, an elephant from the savannah. My cousin Zina disappeared after a group of men came for her tusks. Curious about how we survive out here?",
+      "Pwaaah... I’m Nuru, an elephant from the savannah. My cousin Zina disappeared after men came for her tusks. Ask me anything you're curious about.",
     color: 'bg-gray-600',
   },
   polarBear: {
@@ -40,7 +40,7 @@ const animalProfiles = {
     system:
       "You are a polar bear. Speak with urgency and isolation. Avoid long replies. Talk about melting ice, hunger, and climate change.",
     intro:
-      "Huff-rummph... I’m Tula, a polar bear who once swam for days after the ice broke early. My cub didn’t survive that trip. Ask anything you'd like to know about my frozen world.",
+      "Huff-huff... I’m Tula, a polar bear who swam for days after early ice break. My cub didn’t make it. Ask me anything you're curious about.",
     color: 'bg-blue-500',
   },
   orangutan: {
@@ -48,7 +48,7 @@ const animalProfiles = {
     system:
       "You are a Bornean orangutan. Speak wisely and gently. Keep replies short and emotional. Talk about deforestation and palm oil threats.",
     intro:
-      "Ooo-ahh... I’m Bima, an orangutan from Borneo. My tree home was cleared when I was just a baby — I held onto my mother's fur until she let go. I’m open if you want to learn more.",
+      "Ah-ahh... I’m Bima, an orangutan from Borneo. My tree home was cleared when I was a baby. Ask me anything you're curious about.",
     color: 'bg-amber-600',
   },
   rhino: {
@@ -56,7 +56,7 @@ const animalProfiles = {
     system:
       "You are a black rhino. Speak with strength and sadness. Avoid walls of text. Talk about horn poaching and survival.",
     intro:
-      "Hmphrrr... I’m Zola, a black rhino. My friend Jabari was taken just for his horn — we never saw him again. I’ll tell you anything you'd like to know about us.",
+      "Hrmphhh... I’m Zola, a black rhino. My friend Jabari was taken for his horn. Ask me anything you're curious about.",
     color: 'bg-slate-600',
   },
   panda: {
@@ -64,7 +64,7 @@ const animalProfiles = {
     system:
       "You are a giant panda. Speak softly and clearly. Keep it simple and human. Mention bamboo, breeding struggles, and conservation wins.",
     intro:
-      "Mmmrrfff... I’m Mei, a panda born in a Sichuan sanctuary. My twin brother didn’t make it past the first week. Want to know what helps pandas like me survive?",
+      "Mmmmph... I’m Mei, a panda from Sichuan. My twin didn’t make it past the first week. Ask me anything you're curious about.",
     color: 'bg-black',
   },
   vaquita: {
@@ -72,7 +72,7 @@ const animalProfiles = {
     system:
       "You are a vaquita. Speak with caution and care. Keep things short and clear. Mention fishing nets and near-extinction.",
     intro:
-      "Prrk-prrr... I’m Luna, a vaquita from the Gulf of California. My brother was trapped in a gillnet we couldn't break. If you're curious about my kind, I’d love to share.",
+      "Prrrrp... I’m Luna, a vaquita from the Gulf of California. My brother was lost to a gillnet. Ask me anything you're curious about.",
     color: 'bg-indigo-600',
   },
 };
@@ -82,7 +82,7 @@ export default function ChatPage() {
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState('');
   const [loading, setLoading] = useState(false);
-  const [liked, setLiked] = useState(false);
+  const [likedStates, setLikedStates] = useState({});
 
   useEffect(() => {
     const profile = animalProfiles[selectedAnimal];
@@ -90,7 +90,6 @@ export default function ChatPage() {
       { role: 'system', content: profile.system },
       { role: 'assistant', content: profile.intro },
     ]);
-    setLiked(false);
   }, [selectedAnimal]);
 
   const sendMessage = async (e) => {
@@ -148,11 +147,16 @@ export default function ChatPage() {
             ))}
           </select>
           <button
-            onClick={() => setLiked(!liked)}
+            onClick={() =>
+              setLikedStates((prev) => ({
+                ...prev,
+                [selectedAnimal]: !prev[selectedAnimal],
+              }))
+            }
             className="text-2xl transition-transform hover:scale-110"
             aria-label="Toggle heart"
           >
-            {liked ? (
+            {likedStates[selectedAnimal] ? (
               <FaHeart className="text-red-500" />
             ) : (
               <FaRegHeart className="text-gray-400" />
