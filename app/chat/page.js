@@ -171,10 +171,15 @@ export default function ChatPage() {
             .map((msg, i) => (
               <div
                 key={i}
-                className={`mb-3 ${
-                  msg.role === 'user' ? 'text-right' : 'text-left'
-                }`}
+                className={`mb-3 flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}
               >
+                {msg.role === 'assistant' && (
+                  <img
+                    src={`/images/${selectedAnimal}.jpg`}
+                    alt={`${selectedAnimal} profile`}
+                    className="w-11 h-11 rounded-full mr-2 self-center"
+                  />
+                )}
                 <p
                   className={`inline-block px-4 py-2 rounded-xl max-w-[80%] font-semibold ${
                     msg.role === 'user'
