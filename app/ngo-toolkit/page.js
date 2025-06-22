@@ -43,12 +43,28 @@ export default function NGOToolkit() {
                 className="bg-gray-100 rounded p-4 overflow-x-auto text-sm whitespace-pre-wrap"
                 id="embed-code"
               >
-{`<iframe 
-  src="https://yourdomain.org/chat" 
-  width="100%" 
-  height="600" 
-  style="border:none">
-</iframe>`}
+{`<div style="
+  width: 100%;
+  max-width: 600px;
+  height: 635px;
+  margin: 0 auto;
+  overflow: hidden;
+  border: 2px solid black;
+  border-radius: 16px;
+  box-shadow: 0 0 12px rgba(0,0,0,0.7);
+">
+  <iframe 
+    src="https://zoo-quest-v1-0-ixcs.vercel.app/chat"
+    style="
+      width: 100%;
+      height: 820px;
+      border: none;
+      transform: translateY(-100px);
+      pointer-events: auto;
+    "
+    scrolling="no"
+  ></iframe>
+</div>`}
               </pre>
               <button
                 onClick={() => {
@@ -72,7 +88,8 @@ export default function NGOToolkit() {
         </ol>
 
         <p className="mt-6 text-sm text-gray-500">
-          Note: This uses our hosted version. To self-host, customize, or contribute, view the GitHub repository below.
+        Note: For more specific use cases or integrations, feel free to contact us.
+        This uses our hosted version. To self-host, customize, or contribute, view the GitHub repository below.
         </p>
       </section>
 
