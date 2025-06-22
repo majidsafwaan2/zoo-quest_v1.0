@@ -25,16 +25,16 @@ export default function Home() {
       </section>
 
       {/* Mission Block */}
-      <section className="max-w-4xl mx-auto px-6 pt-16 pb-6 text-center">
-        <h2 className="text-3xl font-bold mb-4">Why This Exists</h2>
-        <p className="text-lg leading-relaxed text-gray-200 mb-10">
+      <section className="max-w-4xl mx-auto px-6 pt-16 pb-6 text-center bg-gray-900">
+        <h2 className="text-3xl font-bold mb-4 text-white">Why This Exists</h2>
+        <p className="text-lg leading-relaxed text-gray-300 mb-10">
           This project combines artificial intelligence with conservation psychology
           to offer a unique, interactive experience. By simulating conversations with
           endangered animals, we aim to build empathy, encourage deeper learning,
           and increase support for conservation efforts.
         </p>
 
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 text-center text-white">
           <div>
             <div className="text-4xl mb-2">💚</div>
             <p className="font-semibold">Empathy-Driven</p>
