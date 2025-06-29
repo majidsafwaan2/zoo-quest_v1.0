@@ -1,7 +1,9 @@
+// jsconfig.json
 {
   "compilerOptions": {
+    "baseUrl": ".",
     "paths": {
-      "@/*": ["./*"]
+      "zoochat-widget": ["./zoochat-widget"]
     }
   }
 }
