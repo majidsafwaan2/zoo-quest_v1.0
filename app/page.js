@@ -1,4 +1,4 @@
-import ZooChatWidget from '../zoochat-widget/ZooChatWidget';
+import ZooChatWidget from './ZooChatWidget';
 
 export default function Home() {
   return (
